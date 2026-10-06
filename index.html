@@ -45,6 +45,16 @@ footer{background:#0c2118;color:#a9bdb2;padding:40px 0 25px}.footer-grid{display
 @media(max-width:900px){.nav-links{display:none}.hero-grid,.why-grid{grid-template-columns:1fr}.market-grid,.price-grid{grid-template-columns:1fr 1fr}.service-grid{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.cta-box{flex-direction:column;align-items:flex-start}}
 @media(max-width:600px){section{padding:62px 0}.market-grid,.price-grid,.service-grid,.process-grid,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.hero{padding:65px 0}.hero h1{letter-spacing:-2px}.form-wrap{padding:22px}.cta-box{padding:32px 24px}.footer-grid{flex-direction:column}}
 </style>
+
+<style>
+.audit-cta{margin:28px auto 0;max-width:980px;padding:20px 22px;border:1px solid #dfe7df;border-radius:18px;background:linear-gradient(135deg,#f7fff8,#ffffff);display:flex;align-items:center;justify-content:space-between;gap:18px;box-shadow:0 10px 30px rgba(20,80,35,.06)}
+.audit-cta strong{display:block;font-size:18px;margin-bottom:5px}.audit-cta span{display:block;color:#647064;font-size:14px}
+.audit-cta a{white-space:nowrap;background:#19a463;color:#fff;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700}
+.who-we-help{padding:76px 20px}.help-grid{max-width:1100px;margin:28px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.help-card{padding:26px;border:1px solid #e4e9e4;border-radius:20px;background:#fff;box-shadow:0 12px 35px rgba(20,40,20,.05)}.help-icon{font-size:28px;margin-bottom:12px}.help-card h3{margin:0 0 8px}.help-card p{margin:0;color:#687168;line-height:1.6}
+.mobile-whatsapp{display:none}
+@media(max-width:700px){.audit-cta{display:block;text-align:center}.audit-cta a{display:inline-block;margin-top:14px}.help-grid{grid-template-columns:1fr}.who-we-help{padding:55px 16px}.mobile-whatsapp{display:block;position:fixed;left:14px;right:14px;bottom:14px;z-index:9999}.mobile-whatsapp a{display:block;text-align:center;background:#19a463;color:#fff;padding:14px;border-radius:14px;text-decoration:none;font-weight:800;box-shadow:0 10px 28px rgba(0,0,0,.16)}body{padding-bottom:72px}}
+</style>
+
 </head>
 <body>
 <header class="navbar"><div class="container nav-inner">
@@ -59,7 +69,16 @@ footer{background:#0c2118;color:#a9bdb2;padding:40px 0 25px}.footer-grid{display
 </div>
 <div class="dashboard"><div class="dash-top"><div class="dash-title">Marketplace Dashboard</div><div class="dash-status">● ACTIVE</div></div>
 <div class="dash-cards"><div class="dash-card"><small>Sales Growth</small><strong>+38%</strong></div><div class="dash-card"><small>Listings</small><strong>1,248</strong></div><div class="dash-card"><small>Accounts</small><strong>24</strong></div><div class="dash-card"><small>Orders</small><strong>3.8K</strong></div></div><div class="chart"><div class="chart-line"></div></div></div>
-</div></section>
+</div>
+<div class="audit-cta">
+  <div>
+    <strong>Want to know what's holding your marketplace back?</strong>
+    <span>Get a quick marketplace audit and identify your biggest growth opportunities.</span>
+  </div>
+  <a href="https://wa.me/916203836621?text=Hi%20Sellers%20Hub,%20I%20want%20a%20free%20marketplace%20audit." target="_blank" rel="noopener">Get Free Audit →</a>
+</div>
+
+</section>
 <section class="marketplaces" id="marketplaces"><div class="container">
 <div class="section-head"><div class="eyebrow">MARKETPLACE SUPPORT</div><h2>One partner for your marketplace operations.</h2><p>Manage your business across leading marketplaces with one streamlined support system.</p></div>
 <div class="market-grid">
@@ -85,6 +104,20 @@ footer{background:#0c2118;color:#a9bdb2;padding:40px 0 25px}.footer-grid{display
 <div class="service-card"><div class="service-number">08</div><h3>Growth Planning</h3><p>Practical strategies to improve marketplace performance and scale operations.</p></div>
 <div class="service-card"><div class="service-number">09</div><h3>Performance Insights</h3><p>Identify performance gaps and turn marketplace data into actionable decisions.</p></div>
 </div></div></section>
+
+<section class="who-we-help">
+  <div class="section-head">
+    <span class="eyebrow">WHO WE HELP</span>
+    <h2>Built for sellers who want to grow</h2>
+    <p>Whether you're launching, relaunching, or scaling, Sellers Hub helps you manage the marketplace side of your business.</p>
+  </div>
+  <div class="help-grid">
+    <div class="help-card"><div class="help-icon">🚀</div><h3>New Sellers</h3><p>Get started with onboarding, catalogs, listings and marketplace setup.</p></div>
+    <div class="help-card"><div class="help-icon">🔄</div><h3>Existing Sellers</h3><p>Improve account management, catalog quality and day-to-day marketplace operations.</p></div>
+    <div class="help-card"><div class="help-icon">📈</div><h3>Growing Brands</h3><p>Bring multiple marketplaces together with structured growth and performance support.</p></div>
+  </div>
+</section>
+
 <section class="why"><div class="container why-grid">
 <div class="why-box"><div class="eyebrow">WHY SELLERS HUB</div><h3>Marketplace work should be simple.</h3><p>You focus on your products and customers. We focus on marketplace operations, account handling and growth opportunities.</p></div>
 <div class="feature-list">
@@ -155,5 +188,10 @@ Please share the next steps.`;
 window.location.href="https://wa.me/916203836621?text="+encodeURIComponent(text);
 });
 </script>
+
+<div class="mobile-whatsapp">
+  <a href="https://wa.me/916203836621?text=Hi%20Sellers%20Hub,%20I%20want%20to%20discuss%20marketplace%20management." target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+</div>
+
 </body>
 </html>
