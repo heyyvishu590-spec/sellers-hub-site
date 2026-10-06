@@ -1,934 +1,792 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102b29">
 
-<title>SELLERS HUB | Marketplace Management</title>
+<title>Sellers Hub — Marketplace Management</title>
 
-<meta name="description"
-content="SELLERS HUB helps sellers manage, optimize and grow their marketplace business across multiple e-commerce platforms.">
+<meta name="description" content="Marketplace account management, catalog operations and growth support across Myntra, Flipkart, Shopsy and Meesho.">
 
-<meta name="theme-color" content="#0b766e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
-  --dark:#102d2a;
-  --dark2:#183c38;
-  --teal:#087f78;
-  --teal2:#0da69b;
-  --mint:#dff5ef;
-  --lime:#d9f36a;
-  --cream:#f7faf8;
-  --white:#ffffff;
-  --text:#17312e;
-  --muted:#687a76;
-  --line:#dce8e4;
-  --shadow:0 20px 60px rgba(16,45,42,.10);
+--ink:#15302d;
+--muted:#61716c;
+--cream:#f7f7f1;
+--lime:#d8f36b;
+--line:#dbe1d8;
 }
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  color:var(--text);
-  background:var(--cream);
-  line-height:1.6;
+margin:0;
+background:var(--cream);
+color:var(--ink);
+font-family:'DM Sans',sans-serif;
 }
 
 a{
-  color:inherit;
-  text-decoration:none;
+color:inherit;
+text-decoration:none;
 }
 
-button,
-input,
-select,
-textarea{
-  font:inherit;
+button{
+font:inherit;
 }
 
-.container{
-  width:min(1180px,92%);
-  margin:auto;
+.wrap{
+max-width:1180px;
+margin:auto;
+padding:0 26px;
 }
 
 /* NAVBAR */
 
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid var(--line);
-}
-
 .nav{
-  min-height:76px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:88px;
 }
 
 .logo{
-  font-size:23px;
-  font-weight:900;
-  letter-spacing:-1px;
+font:800 22px Manrope;
+letter-spacing:-1.2px;
 }
 
 .logo span{
-  background:var(--lime);
-  padding:4px 9px;
-  border-radius:8px;
-  margin-right:6px;
+display:inline-block;
+background:var(--lime);
+padding:3px 8px;
+border-radius:8px;
+margin-right:6px;
 }
 
 .navlinks{
-  display:flex;
-  align-items:center;
-  gap:27px;
-  font-size:14px;
-  font-weight:600;
+display:flex;
+gap:28px;
+align-items:center;
+font-size:14px;
 }
 
 .navlinks a:hover{
-  color:var(--teal);
+opacity:.7;
 }
 
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:14px 22px;
-  border-radius:50px;
-  border:none;
-  background:var(--teal);
-  color:white;
-  font-weight:700;
-  cursor:pointer;
-  transition:.25s;
+.pill{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+border-radius:50px;
+padding:15px 24px;
+background:var(--ink);
+color:#fff;
+font-weight:700;
+font-size:14px;
+border:0;
+cursor:pointer;
+transition:.2s;
 }
 
-.btn:hover{
-  transform:translateY(-3px);
-  background:var(--teal2);
-  box-shadow:0 10px 25px rgba(8,127,120,.22);
+.pill:hover{
+transform:translateY(-3px);
 }
 
-.btn-dark{
-  background:var(--dark);
-}
-
-.btn-light{
-  background:white;
-  color:var(--dark);
-  border:1px solid var(--line);
+.outline{
+border:1px solid #b7c4ba;
+background:transparent;
+color:var(--ink);
 }
 
 /* HERO */
 
 .hero{
-  padding:100px 0 80px;
-  background:
-    radial-gradient(circle at 90% 5%,#d8f5ee,transparent 35%),
-    var(--cream);
+padding:78px 0 90px;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:55px;
+align-items:center;
 }
 
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  gap:65px;
-  align-items:center;
-}
-
-.badge{
-  display:inline-flex;
-  padding:8px 13px;
-  border-radius:50px;
-  background:var(--mint);
-  color:var(--teal);
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:1.3px;
-  text-transform:uppercase;
+.eyebrow{
+display:inline-block;
+font-size:12px;
+font-weight:800;
+letter-spacing:2px;
+text-transform:uppercase;
+margin-bottom:22px;
 }
 
 .hero h1{
-  font-size:clamp(44px,6vw,76px);
-  line-height:1.04;
-  letter-spacing:-4px;
-  margin:22px 0;
+font:800 clamp(45px,6vw,82px)/1.08 Manrope;
+letter-spacing:-4px;
+margin:0 0 26px;
 }
 
-.hero h1 span{
-  color:var(--teal);
+.hero h1 em{
+font-style:normal;
+color:#668c4d;
 }
 
-.hero-text{
-  max-width:580px;
-  font-size:18px;
-  color:var(--muted);
+.hero p{
+font-size:18px;
+line-height:1.75;
+color:var(--muted);
+max-width:520px;
+margin:0 0 30px;
 }
 
-.hero-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:30px;
+.hero-actions{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
 }
 
-.hero-note{
-  margin-top:18px;
-  font-size:13px;
-  color:var(--muted);
+/* HERO VISUAL */
+
+.visual{
+background:#dbe9d5;
+border-radius:34px;
+padding:22px;
+min-height:460px;
+position:relative;
+overflow:hidden;
 }
 
-/* DASHBOARD */
-
-.dashboard{
-  background:white;
-  border:1px solid var(--line);
-  border-radius:28px;
-  padding:25px;
-  box-shadow:var(--shadow);
-  transform:rotate(-1.5deg);
+.orb{
+position:absolute;
+width:290px;
+height:290px;
+border-radius:50%;
+background:var(--lime);
+right:-85px;
+top:-85px;
 }
 
-.dash-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:25px;
+.board{
+position:relative;
+background:#fff;
+border-radius:24px;
+padding:25px;
+box-shadow:0 22px 60px #183f2820;
+transform:rotate(-3deg);
+margin-top:38px;
 }
 
-.dash-title{
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:1px;
+.boardtop{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:12px;
+font-weight:700;
+color:#697a70;
 }
 
-.live{
-  background:#e5f8d7;
-  color:#34702b;
-  padding:6px 10px;
-  border-radius:30px;
-  font-size:11px;
-  font-weight:700;
+.dot{
+background:#dff3bd;
+color:#35621f;
+padding:8px 12px;
+border-radius:20px;
 }
 
-.stat-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
+.board h2{
+font:800 37px Manrope;
+letter-spacing:-2px;
+margin:18px 0 4px;
 }
 
-.stat{
-  padding:18px;
-  border-radius:17px;
-  background:#f5f8f6;
+.board small{
+color:#8a958b;
 }
 
-.stat small{
-  color:var(--muted);
+.bars{
+display:flex;
+gap:12px;
+height:145px;
+align-items:end;
+margin-top:28px;
+border-bottom:1px solid var(--line);
 }
 
-.stat strong{
-  display:block;
-  font-size:25px;
-  margin-top:5px;
+.bars i{
+display:block;
+flex:1;
+background:#b9d6b3;
+border-radius:7px 7px 0 0;
 }
 
-.chart{
-  height:150px;
-  display:flex;
-  align-items:end;
-  gap:9px;
-  margin-top:25px;
-  padding-top:15px;
-  border-bottom:1px solid var(--line);
+.bars i:nth-child(2n){
+background:#86b17e;
 }
 
-.chart i{
-  flex:1;
-  background:#a9dcd3;
-  border-radius:7px 7px 0 0;
+.bars i:last-child{
+background:#254d40;
 }
 
-.chart i:nth-child(2n){
-  background:var(--teal);
+.boardbottom{
+display:flex;
+justify-content:space-between;
+margin-top:22px;
+font-size:13px;
+color:#6d796f;
 }
 
-/* GENERAL */
+.boardbottom strong{
+color:var(--ink);
+}
+
+.float{
+position:absolute;
+right:4px;
+bottom:20px;
+background:var(--ink);
+color:white;
+border-radius:16px;
+padding:17px 21px;
+box-shadow:0 15px 25px #0002;
+font-size:14px;
+}
+
+/* SECTIONS */
 
 .section{
-  padding:95px 0;
+padding:100px 0;
 }
 
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:40px;
-  margin-bottom:45px;
-}
-
-.kicker{
-  color:var(--teal);
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:13px;
+.sectionhead{
+display:flex;
+justify-content:space-between;
+align-items:end;
+gap:35px;
+margin-bottom:40px;
 }
 
 .section h2{
-  font-size:clamp(32px,4vw,53px);
-  line-height:1.1;
-  letter-spacing:-2.5px;
+font:800 clamp(32px,4vw,54px)/1.16 Manrope;
+letter-spacing:-2px;
+margin:0;
 }
 
-.section-head p{
-  max-width:400px;
-  color:var(--muted);
+.sectionhead p{
+max-width:370px;
+line-height:1.7;
+color:var(--muted);
 }
 
 /* MARKETPLACES */
 
-.market-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
+.platforms{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:14px;
 }
 
-.market{
-  background:white;
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:30px 20px;
-  text-align:center;
-  transition:.25s;
+.platform{
+background:white;
+border:1px solid var(--line);
+border-radius:20px;
+padding:28px 18px;
+text-align:center;
+font:800 20px Manrope;
+transition:.2s;
 }
 
-.market:hover{
-  transform:translateY(-7px);
-  box-shadow:var(--shadow);
+.platform:hover{
+transform:translateY(-4px);
+border-color:#8aa88e;
 }
 
-.market-icon{
-  width:55px;
-  height:55px;
-  margin:auto auto 17px;
-  border-radius:16px;
-  display:grid;
-  place-items:center;
-  background:var(--mint);
-  color:var(--teal);
-  font-weight:900;
-  font-size:20px;
-}
-
-.market h3{
-  font-size:19px;
-}
-
-.market p{
-  color:var(--muted);
-  font-size:12px;
-  margin-top:6px;
+.platform small{
+display:block;
+font:500 12px 'DM Sans';
+color:var(--muted);
+margin-top:8px;
 }
 
 /* SERVICES */
 
-.dark-section{
-  background:var(--dark);
-  color:white;
+.dark{
+background:var(--ink);
+color:white;
 }
 
-.dark-section .kicker{
-  color:var(--lime);
+.dark .sectionhead p,
+.dark .eyebrow{
+color:#b9c9c1;
 }
 
-.dark-section .section-head p{
-  color:#b7c9c5;
-}
-
-.service-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
+.services{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:16px;
 }
 
 .service{
-  padding:30px;
-  border-radius:22px;
-  background:var(--dark2);
-  border:1px solid rgba(255,255,255,.08);
-  transition:.25s;
+background:#24423e;
+padding:38px;
+border-radius:22px;
+min-height:230px;
 }
 
-.service:hover{
-  transform:translateY(-5px);
-  border-color:#557d77;
-}
-
-.service-number{
-  color:var(--lime);
-  font-weight:900;
-  font-size:12px;
+.service b{
+font-size:13px;
+color:var(--lime);
 }
 
 .service h3{
-  margin:24px 0 10px;
-  font-size:21px;
+font:700 23px Manrope;
+margin:28px 0 12px;
 }
 
 .service p{
-  color:#b7c9c5;
-  font-size:14px;
-}
-
-/* STATS */
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-}
-
-.stat-card{
-  background:white;
-  border:1px solid var(--line);
-  padding:30px 20px;
-  border-radius:20px;
-  text-align:center;
-}
-
-.stat-card strong{
-  display:block;
-  font-size:38px;
-  color:var(--teal);
-}
-
-.stat-card span{
-  color:var(--muted);
-  font-size:13px;
+color:#b9c9c1;
+line-height:1.7;
+max-width:420px;
 }
 
 /* PRICING */
 
 .pricing{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.price-card{
-  background:white;
-  border:1px solid var(--line);
-  border-radius:24px;
-  padding:32px;
-  display:flex;
-  flex-direction:column;
-  min-height:350px;
-  transition:.25s;
-}
-
-.price-card:hover{
-  transform:translateY(-6px);
-  box-shadow:var(--shadow);
-}
-
-.price-card h3{
-  font-size:21px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
 }
 
 .price{
-  font-size:41px;
-  font-weight:900;
-  letter-spacing:-2px;
-  margin:25px 0 5px;
+border:1px solid var(--line);
+background:#fff;
+padding:32px;
+border-radius:23px;
+display:flex;
+flex-direction:column;
+min-height:315px;
 }
 
-.price small{
-  font-size:13px;
-  color:var(--muted);
-  letter-spacing:0;
+.price h3{
+font:800 22px Manrope;
+margin:0;
 }
 
-.price-card p{
-  color:var(--muted);
-  font-size:14px;
-  flex:1;
+.amount{
+font:800 40px Manrope;
+letter-spacing:-2px;
+margin:30px 0 8px;
+}
+
+.amount span{
+font:500 13px 'DM Sans';
+color:var(--muted);
+letter-spacing:0;
+}
+
+.price p{
+color:var(--muted);
+line-height:1.7;
+flex:1;
+}
+
+.price .pill{
+align-self:start;
 }
 
 /* PROCESS */
 
-.process{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
+.steps{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
 }
 
-.process-item{
-  border-top:2px solid var(--dark);
-  padding-top:20px;
+.step{
+border-top:2px solid var(--ink);
+padding-top:22px;
 }
 
-.process-item b{
-  color:var(--teal);
+.step b{
+color:#7d9e62;
 }
 
-.process-item h3{
-  margin:15px 0 8px;
+.step h3{
+font:800 22px Manrope;
+margin:18px 0 10px;
 }
 
-.process-item p{
-  color:var(--muted);
-  font-size:14px;
+.step p{
+color:var(--muted);
+line-height:1.6;
 }
 
-/* ENQUIRY */
+/* ENQUIRY FORM */
 
-.enquiry-box{
-  background:white;
-  border:1px solid var(--line);
-  border-radius:28px;
-  padding:40px;
-  box-shadow:var(--shadow);
-  max-width:900px;
-  margin:auto;
+.enquiry{
+background:#fff;
+border:1px solid var(--line);
+border-radius:24px;
+padding:32px;
+max-width:820px;
+margin:0 auto;
+box-shadow:0 18px 50px #183f2810;
 }
 
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:17px;
+.formgrid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
 }
 
 .field{
-  display:flex;
-  flex-direction:column;
-  gap:7px;
+display:flex;
+flex-direction:column;
+gap:7px;
 }
 
 .field.full{
-  grid-column:1/-1;
+grid-column:1/-1;
 }
 
 .field label{
-  font-size:13px;
-  font-weight:800;
+font-size:13px;
+font-weight:700;
 }
 
 .field input,
 .field select,
 .field textarea{
-  width:100%;
-  border:1px solid #ccd9d5;
-  border-radius:12px;
-  padding:14px;
-  background:#fbfdfc;
-  outline:none;
+font:inherit;
+border:1px solid #cfd9d0;
+border-radius:12px;
+padding:13px 14px;
+background:#fbfcfa;
+color:var(--ink);
+outline:none;
 }
 
 .field input:focus,
 .field select:focus,
 .field textarea:focus{
-  border-color:var(--teal);
-  box-shadow:0 0 0 3px #087f7815;
+border-color:#7d9e62;
+box-shadow:0 0 0 3px #d8f36b55;
 }
 
 .field textarea{
-  min-height:120px;
-  resize:vertical;
+min-height:110px;
+resize:vertical;
 }
 
-.form-bottom{
-  display:flex;
-  align-items:center;
-  gap:15px;
-  flex-wrap:wrap;
-  margin-top:20px;
+.formactions{
+display:flex;
+align-items:center;
+gap:12px;
+margin-top:18px;
+flex-wrap:wrap;
 }
 
-.form-info{
-  font-size:12px;
-  color:var(--muted);
+.formnote{
+font-size:12px;
+color:var(--muted);
 }
 
-/* FAQ */
-
-.faq{
-  max-width:850px;
-  margin:auto;
-}
-
-.faq-item{
-  background:white;
-  border:1px solid var(--line);
-  border-radius:16px;
-  margin-bottom:10px;
-  overflow:hidden;
-}
-
-.faq-question{
-  padding:20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  cursor:pointer;
-  font-weight:800;
-}
-
-.faq-answer{
-  display:none;
-  padding:0 20px 20px;
-  color:var(--muted);
-  font-size:14px;
-}
-
-.faq-item.active .faq-answer{
-  display:block;
-}
-
-.faq-item.active .plus{
-  transform:rotate(45deg);
+.success{
+display:none;
+margin-top:14px;
+padding:12px 14px;
+border-radius:12px;
+background:#e8f6dc;
+color:#315b26;
+font-size:13px;
 }
 
 /* CTA */
 
 .cta{
-  background:var(--lime);
-  border-radius:32px;
-  padding:70px 30px;
-  text-align:center;
+background:var(--lime);
+border-radius:35px;
+padding:68px;
+text-align:center;
 }
 
 .cta h2{
-  max-width:720px;
-  margin:0 auto 18px;
+max-width:720px;
+margin:0 auto 20px;
 }
 
 .cta p{
-  color:#506340;
-  max-width:580px;
-  margin:0 auto 27px;
+color:#4f6245;
+margin-bottom:28px;
 }
 
 /* FOOTER */
 
-footer{
-  padding:40px 0;
-  border-top:1px solid var(--line);
-}
-
 .footer{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  color:var(--muted);
-  font-size:13px;
+padding:42px 0;
+display:flex;
+justify-content:space-between;
+gap:25px;
+color:#66766b;
+font-size:13px;
 }
 
 .footer strong{
-  color:var(--dark);
-}
-
-/* FLOAT WHATSAPP */
-
-.whatsapp{
-  position:fixed;
-  right:22px;
-  bottom:22px;
-  z-index:2000;
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  background:#25D366;
-  color:white;
-  display:grid;
-  place-items:center;
-  font-size:25px;
-  box-shadow:0 10px 30px rgba(0,0,0,.2);
-  transition:.25s;
-}
-
-.whatsapp:hover{
-  transform:scale(1.1);
-}
-
-/* TOAST */
-
-.toast{
-  position:fixed;
-  left:50%;
-  bottom:25px;
-  transform:translate(-50%,30px);
-  background:var(--dark);
-  color:white;
-  padding:13px 20px;
-  border-radius:50px;
-  font-size:13px;
-  opacity:0;
-  pointer-events:none;
-  transition:.3s;
-  z-index:3000;
-}
-
-.toast.show{
-  opacity:1;
-  transform:translate(-50%,0);
+color:var(--ink);
 }
 
 /* MOBILE */
 
-@media(max-width:850px){
+@media(max-width:800px){
 
-  .navlinks a:not(.btn){
-    display:none;
-  }
+.nav{
+height:74px;
+}
 
-  .hero-grid{
-    grid-template-columns:1fr;
-  }
+.navlinks a:not(.pill){
+display:none;
+}
 
-  .hero{
-    padding-top:65px;
-  }
+.navlinks .pill{
+padding:11px 14px;
+font-size:12px;
+}
 
-  .market-grid,
-  .stats{
-    grid-template-columns:1fr 1fr;
-  }
+.hero{
+grid-template-columns:1fr;
+padding:45px 0 65px;
+gap:30px;
+}
 
-  .service-grid{
-    grid-template-columns:1fr 1fr;
-  }
+.hero h1{
+letter-spacing:-2.6px;
+}
 
-  .pricing{
-    grid-template-columns:1fr;
-  }
+.visual{
+min-height:395px;
+}
 
-  .process{
-    grid-template-columns:1fr 1fr;
-  }
+.board{
+margin-top:22px;
+}
 
-  .section-head{
-    display:block;
-  }
+.section{
+padding:70px 0;
+}
 
-  .section-head p{
-    margin-top:15px;
-  }
+.sectionhead{
+display:block;
+}
+
+.platforms,
+.services,
+.pricing,
+.steps{
+grid-template-columns:repeat(2,1fr);
+}
+
+.cta{
+padding:45px 20px;
+}
+
+.footer{
+flex-direction:column;
+}
 
 }
 
-@media(max-width:560px){
+@media(max-width:520px){
 
-  .container{
-    width:92%;
-  }
-
-  .hero h1{
-    letter-spacing:-2.5px;
-  }
-
-  .market-grid,
-  .stats,
-  .service-grid,
-  .process,
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .field.full{
-    grid-column:auto;
-  }
-
-  .enquiry-box{
-    padding:24px;
-  }
-
-  .footer{
-    flex-direction:column;
-  }
-
-  .dashboard{
-    transform:none;
-  }
-
-  .hero-buttons{
-    flex-direction:column;
-  }
-
-  .hero-buttons .btn{
-    width:100%;
-  }
-
+.platforms,
+.services,
+.pricing,
+.steps,
+.formgrid{
+grid-template-columns:1fr;
 }
 
+.field.full{
+grid-column:auto;
+}
+
+.platform{
+padding:23px;
+}
+
+.service{
+min-height:auto;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.board h2{
+font-size:31px;
+}
+
+.float{
+right:0;
+}
+
+.wrap{
+padding:0 19px;
+}
+
+}
 </style>
 </head>
 
-
 <body>
 
+<!-- NAVBAR -->
 
-<!-- NAVIGATION -->
+<header class="wrap nav">
 
-<header>
-
-<div class="container nav">
-
-<a href="#home" class="logo">
-<span>S</span> SELLERS HUB
+<a class="logo" href="#home">
+<span>S</span> sellers hub.
 </a>
 
 <nav class="navlinks">
 
 <a href="#services">Services</a>
+<a href="#platforms">Platforms</a>
 <a href="#pricing">Pricing</a>
-<a href="#faq">FAQ</a>
 
-<a href="#enquiry" class="btn">
-Get Started
+<a class="pill"
+href="https://wa.me/916203836621?text=Hi%20Sellers%20Hub%2C%20I'd%20like%20to%20know%20more"
+target="_blank">
+Let's talk ↗
 </a>
 
 </nav>
 
-</div>
-
 </header>
 
 
+<main>
 
 <!-- HERO -->
 
-<section class="hero" id="home">
+<div class="wrap">
 
-<div class="container hero-grid">
+<section class="hero" id="home">
 
 <div>
 
-<span class="badge">
-Marketplace Management
+<span class="eyebrow">
+Your marketplace growth partner
 </span>
 
 <h1>
-Build. Manage.<br>
-<span>Grow.</span>
+Less hassle.<br>
+<em>More growth.</em>
 </h1>
 
-<p class="hero-text">
-SELLERS HUB helps online sellers manage their marketplace operations,
-catalogs, listings and growth — all from one reliable partner.
+<p>
+From daily account operations to smarter catalogs and performance insights,
+we help you run your online marketplace business with confidence.
 </p>
 
-<div class="hero-buttons">
+<div class="hero-actions">
 
-<a href="#enquiry" class="btn">
-Start an Enquiry ↗
+<a class="pill"
+href="https://wa.me/916203836621?text=Hi%20Sellers%20Hub%2C%20I%20want%20marketplace%20management%20support"
+target="_blank">
+Grow with us ↗
 </a>
 
-<a href="#services" class="btn btn-light">
-Explore Services
+<a class="pill outline" href="#services">
+Explore services ↓
 </a>
 
 </div>
 
-<p class="hero-note">
-✓ Practical support &nbsp; ✓ Transparent pricing &nbsp; ✓ Multi-marketplace support
-</p>
-
 </div>
 
 
-<!-- DASHBOARD -->
+<div class="visual">
 
-<div class="dashboard">
+<div class="orb"></div>
 
-<div class="dash-top">
+<div class="board">
 
-<span class="dash-title">
-SELLERS HUB OVERVIEW
-</span>
+<div class="boardtop">
 
-<span class="live">
-● Growth focused
+<span>PERFORMANCE OVERVIEW</span>
+
+<span class="dot">
+↗ Growth focus
 </span>
 
 </div>
 
+<h2>
+Smarter decisions.
+</h2>
 
-<div class="stat-grid">
+<small>
+Illustrative analytics preview · Not live sales data
+</small>
 
-<div class="stat">
-<small>Marketplace</small>
-<strong>4+</strong>
-</div>
+<div class="bars">
 
-<div class="stat">
-<small>Services</small>
-<strong>9+</strong>
-</div>
-
-<div class="stat">
-<small>Operations</small>
-<strong>360°</strong>
-</div>
-
-<div class="stat">
-<small>Support</small>
-<strong>1:1</strong>
-</div>
-
-</div>
-
-
-<div class="chart">
-
-<i style="height:40%"></i>
-<i style="height:55%"></i>
-<i style="height:48%"></i>
-<i style="height:68%"></i>
-<i style="height:61%"></i>
-<i style="height:83%"></i>
+<i style="height:43%"></i>
+<i style="height:66%"></i>
+<i style="height:57%"></i>
+<i style="height:75%"></i>
+<i style="height:62%"></i>
+<i style="height:86%"></i>
 <i style="height:100%"></i>
 
 </div>
 
+<div class="boardbottom">
+
+<span>
+Catalog health <strong>↗</strong>
+</span>
+
+<span>
+Growth planning <strong>✓</strong>
+</span>
+
+</div>
+
+</div>
+
+<div class="float">
+✦ Built for ambitious sellers
 </div>
 
 </div>
 
 </section>
 
+</div>
 
 
 <!-- MARKETPLACES -->
 
 <section class="section" id="platforms">
 
-<div class="container">
+<div class="wrap">
 
-<div class="section-head">
+<div class="sectionhead">
 
 <div>
 
-<div class="kicker">
+<span class="eyebrow">
 Where we work
-</div>
+</span>
 
 <h2>
 One partner.<br>
@@ -938,279 +796,200 @@ Multiple marketplaces.
 </div>
 
 <p>
-Support across major e-commerce marketplaces with equal focus on
-account operations, catalog quality and business growth.
+Consistent support across India's popular selling platforms.
+Every marketplace matters.
 </p>
 
 </div>
 
 
-<div class="market-grid">
+<div class="platforms">
 
-
-<a class="market"
+<a class="platform"
 href="https://www.myntra.com"
-target="_blank"
-rel="noopener">
-
-<div class="market-icon">M</div>
-
-<h3>Myntra</h3>
-
-<p>Marketplace support ↗</p>
-
+target="_blank">
+Myntra
+<small>Explore marketplace ↗</small>
 </a>
 
-
-<a class="market"
+<a class="platform"
 href="https://www.flipkart.com"
-target="_blank"
-rel="noopener">
-
-<div class="market-icon">F</div>
-
-<h3>Flipkart</h3>
-
-<p>Marketplace support ↗</p>
-
+target="_blank">
+Flipkart
+<small>Explore marketplace ↗</small>
 </a>
 
-
-<a class="market"
+<a class="platform"
 href="https://www.shopsy.in"
-target="_blank"
-rel="noopener">
-
-<div class="market-icon">S</div>
-
-<h3>Shopsy</h3>
-
-<p>Marketplace support ↗</p>
-
+target="_blank">
+Shopsy
+<small>Explore marketplace ↗</small>
 </a>
 
-
-<a class="market"
+<a class="platform"
 href="https://www.meesho.com"
-target="_blank"
-rel="noopener">
-
-<div class="market-icon">M</div>
-
-<h3>Meesho</h3>
-
-<p>Marketplace support ↗</p>
-
+target="_blank">
+Meesho
+<small>Explore marketplace ↗</small>
 </a>
-
 
 </div>
 
 </div>
 
 </section>
-
 
 
 <!-- SERVICES -->
 
-<section class="section dark-section" id="services">
+<section class="section dark" id="services">
 
-<div class="container">
+<div class="wrap">
 
-<div class="section-head">
+<div class="sectionhead">
 
 <div>
 
-<div class="kicker">
+<span class="eyebrow">
 What we do
-</div>
+</span>
 
 <h2>
-Everything your<br>
-store needs.
+Everything your store<br>
+needs to move forward.
 </h2>
 
 </div>
 
 <p>
-Hands-on marketplace support from account setup and catalog operations
-to optimization and growth planning.
+Practical, hands-on support for the work that keeps your marketplace business running.
 </p>
 
 </div>
 
 
-<div class="service-grid">
+<div class="services">
 
+<article class="service">
 
-<div class="service">
-<span class="service-number">01 / OPERATIONS</span>
-<h3>Account Management</h3>
+<b>01 / OPERATIONS</b>
+
+<h3>
+Account Management
+</h3>
+
 <p>
-Day-to-day seller account handling, coordination, issue tracking and operational support.
+Day-to-day seller account handling, coordination and issue tracking.
 </p>
-</div>
+
+</article>
 
 
-<div class="service">
-<span class="service-number">02 / RELAUNCH</span>
-<h3>Account Relaunch</h3>
+<article class="service">
+
+<b>02 / CATALOG</b>
+
+<h3>
+Listings & Optimization
+</h3>
+
 <p>
-Support for inactive, paused or underperforming marketplace accounts.
+Catalog creation, listing quality checks and improvements to product presentation.
 </p>
-</div>
+
+</article>
 
 
-<div class="service">
-<span class="service-number">03 / BRAND</span>
-<h3>Flipkart Brand Approval</h3>
+<article class="service">
+
+<b>03 / STRATEGY</b>
+
+<h3>
+Growth Planning
+</h3>
+
 <p>
-Assistance with marketplace brand approval requirements and documentation.
+Pricing, promotion planning and opportunities to improve visibility and sales.
 </p>
-</div>
+
+</article>
 
 
-<div class="service">
-<span class="service-number">04 / AUTHORIZATION</span>
-<h3>Brand Authorization</h3>
+<article class="service">
+
+<b>04 / INSIGHTS</b>
+
+<h3>
+Performance Insights
+</h3>
+
 <p>
-Support with brand authorization processes and seller documentation.
+Clear reporting and data-driven recommendations for better decisions.
 </p>
-</div>
+
+</article>
 
 
-<div class="service">
-<span class="service-number">05 / ONBOARDING</span>
-<h3>Seller Onboarding</h3>
+<article class="service">
+
+<b>05 / RELAUNCH</b>
+
+<h3>
+Account Relaunch
+</h3>
+
 <p>
-Get your marketplace account and initial selling operations organized.
+Support for inactive or underperforming marketplace accounts.
 </p>
-</div>
+
+</article>
 
 
-<div class="service">
-<span class="service-number">06 / CATALOG</span>
-<h3>Catalog Management</h3>
+<article class="service">
+
+<b>06 / BRAND</b>
+
+<h3>
+Brand Authorization
+</h3>
+
 <p>
-Product catalog creation, updates, quality checks and marketplace operations.
+Support with brand authorization and marketplace brand-related requirements.
 </p>
-</div>
 
-
-<div class="service">
-<span class="service-number">07 / LISTING</span>
-<h3>Listing Optimization</h3>
-<p>
-Improve product titles, attributes, descriptions and overall listing quality.
-</p>
-</div>
-
-
-<div class="service">
-<span class="service-number">08 / GROWTH</span>
-<h3>Growth Planning</h3>
-<p>
-Identify opportunities around pricing, promotions, visibility and sales growth.
-</p>
-</div>
-
-
-<div class="service">
-<span class="service-number">09 / ANALYTICS</span>
-<h3>Performance Insights</h3>
-<p>
-Understand marketplace performance and turn data into practical actions.
-</p>
-</div>
-
+</article>
 
 </div>
 
 </div>
 
 </section>
-
-
-
-<!-- TRUST STATS -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="section-head">
-
-<div>
-
-<div class="kicker">
-Built for sellers
-</div>
-
-<h2>
-Focused on the work<br>
-behind the sales.
-</h2>
-
-</div>
-
-</div>
-
-
-<div class="stats">
-
-<div class="stat-card">
-<strong>4+</strong>
-<span>Marketplaces</span>
-</div>
-
-<div class="stat-card">
-<strong>9+</strong>
-<span>Core Services</span>
-</div>
-
-<div class="stat-card">
-<strong>1:1</strong>
-<span>Business Support</span>
-</div>
-
-<div class="stat-card">
-<strong>360°</strong>
-<span>Marketplace Operations</span>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
 
 
 <!-- PRICING -->
 
 <section class="section" id="pricing">
 
-<div class="container">
+<div class="wrap">
 
-<div class="section-head">
+<div class="sectionhead">
 
 <div>
 
-<div class="kicker">
-Pricing
-</div>
+<span class="eyebrow">
+Straightforward plans
+</span>
 
 <h2>
-Simple monthly<br>
-plans.
+Support that fits<br>
+your business.
 </h2>
 
 </div>
 
 <p>
-Starting prices for marketplace management.
-Final pricing can vary based on scope and account requirements.
+Transparent monthly starting prices.
+Contact us to discuss scope and onboarding.
 </p>
 
 </div>
@@ -1218,92 +997,112 @@ Final pricing can vary based on scope and account requirements.
 
 <div class="pricing">
 
-
-<div class="price-card">
+<article class="price">
 
 <h3>Myntra</h3>
 
-<div class="price">
+<div class="amount">
 ₹7,000
-<small>/ month</small>
+<span>/ month</span>
 </div>
 
 <p>
-Account management, catalog support and marketplace growth assistance.
+Marketplace account, catalog and growth support.
 </p>
 
-<a href="#enquiry" class="btn">
+<a class="pill"
+href="https://wa.me/916203836621?text=Hi%2C%20I'm%20interested%20in%20Myntra%20management"
+target="_blank">
 Enquire ↗
 </a>
 
-</div>
+</article>
 
 
-<div class="price-card">
+<article class="price">
 
 <h3>Flipkart + Shopsy</h3>
 
-<div class="price">
+<div class="amount">
 ₹5,000
-<small>/ month</small>
+<span>/ month</span>
 </div>
 
 <p>
-Combined account management, catalog and operational support.
+Combined marketplace management and listing support.
 </p>
 
-<a href="#enquiry" class="btn">
+<a class="pill"
+href="https://wa.me/916203836621?text=Hi%2C%20I'm%20interested%20in%20Flipkart%20and%20Shopsy%20management"
+target="_blank">
 Enquire ↗
 </a>
 
-</div>
+</article>
 
 
-<div class="price-card">
+<article class="price">
 
 <h3>Meesho</h3>
 
-<div class="price">
+<div class="amount">
 ₹3,000
-<small>/ month</small>
+<span>/ month</span>
 </div>
 
 <p>
-Seller operations, catalog management and marketplace support.
+Practical seller operations and catalog management.
 </p>
 
-<a href="#enquiry" class="btn">
+<a class="pill"
+href="https://wa.me/916203836621?text=Hi%2C%20I'm%20interested%20in%20Meesho%20management"
+target="_blank">
 Enquire ↗
 </a>
 
+</article>
+
 </div>
 
 
-</div>
+<p style="color:var(--muted);margin-top:22px">
+
+Need support across multiple marketplaces?
+
+<a
+href="https://wa.me/916203836621?text=Hi%2C%20I%20need%20a%20multi-marketplace%20plan"
+target="_blank">
+
+<strong>
+Ask for a custom quote ↗
+</strong>
+
+</a>
+
+</p>
 
 </div>
 
 </section>
 
 
-
 <!-- PROCESS -->
 
-<section class="section">
+<section class="section" id="process">
 
-<div class="container">
+<div class="wrap">
 
-<div class="section-head">
+<div class="sectionhead">
 
 <div>
 
-<div class="kicker">
-How it works
-</div>
+<span class="eyebrow">
+Our approach
+</span>
 
 <h2>
-From enquiry<br>
-to execution.
+Simple process.<br>
+Clear next steps.
 </h2>
 
 </div>
@@ -1311,178 +1110,179 @@ to execution.
 </div>
 
 
-<div class="process">
+<div class="steps">
 
+<div class="step">
 
-<div class="process-item">
 <b>01</b>
+
 <h3>Connect</h3>
+
 <p>
-Tell us about your business and marketplace requirements.
+Tell us about your products and current challenges.
 </p>
+
 </div>
 
 
-<div class="process-item">
+<div class="step">
+
 <b>02</b>
+
 <h3>Review</h3>
+
 <p>
-We understand your current account, products and challenges.
+We assess your marketplace needs and priorities.
 </p>
+
 </div>
 
 
-<div class="process-item">
+<div class="step">
+
 <b>03</b>
+
 <h3>Execute</h3>
+
 <p>
-We work on the agreed marketplace operations and improvements.
+We work on listings, operations and agreed improvements.
 </p>
+
 </div>
 
 
-<div class="process-item">
+<div class="step">
+
 <b>04</b>
-<h3>Grow</h3>
-<p>
-Track progress and continuously improve your marketplace operations.
-</p>
-</div>
 
+<h3>Improve</h3>
+
+<p>
+We track progress and refine the plan over time.
+</p>
+
+</div>
 
 </div>
 
 </div>
 
 </section>
-
 
 
 <!-- ENQUIRY FORM -->
 
 <section class="section" id="enquiry">
 
-<div class="container">
+<div class="wrap">
 
-<div class="section-head">
+<div class="sectionhead">
 
 <div>
 
-<div class="kicker">
-Start a conversation
-</div>
+<span class="eyebrow">
+Quick enquiry
+</span>
 
 <h2>
-Tell us about<br>
-your business.
+Tell us what<br>
+you need.
 </h2>
 
 </div>
 
 <p>
-Fill in the details below. Your enquiry will be prepared automatically
-and opened in WhatsApp.
+Fill in a few details and your enquiry will open directly in WhatsApp.
 </p>
 
 </div>
 
 
-<div class="enquiry-box">
+<form class="enquiry" id="enquiryForm">
 
-<form id="enquiryForm">
-
-<div class="form-grid">
+<div class="formgrid">
 
 
 <div class="field">
 
-<label>Name *</label>
+<label for="name">
+Your name *
+</label>
 
 <input
-type="text"
 id="name"
-placeholder="Your full name"
-required>
+name="name"
+required
+placeholder="Enter your name">
 
 </div>
 
 
 <div class="field">
 
-<label>WhatsApp Number *</label>
+<label for="phone">
+WhatsApp number *
+</label>
 
 <input
-type="tel"
 id="phone"
-placeholder="10-digit mobile number"
-maxlength="10"
-required>
+name="phone"
+required
+inputmode="tel"
+placeholder="10-digit mobile number">
 
 </div>
 
 
 <div class="field">
 
-<label>Business / Brand *</label>
+<label for="business">
+Business / Brand *
+</label>
 
 <input
-type="text"
 id="business"
-placeholder="Your brand name"
+name="business"
+required
+placeholder="Your brand name">
+
+</div>
+
+
+<div class="field">
+
+<label for="marketplace">
+Marketplace *
+</label>
+
+<select
+id="marketplace"
+name="marketplace"
 required>
 
-</div>
+<option value="">
+Select marketplace
+</option>
 
+<option>
+Myntra
+</option>
 
-<div class="field">
+<option>
+Flipkart
+</option>
 
-<label>Current Monthly Sales</label>
+<option>
+Shopsy
+</option>
 
-<select id="sales">
+<option>
+Meesho
+</option>
 
-<option value="">Select range</option>
-<option>Not started yet</option>
-<option>Below ₹50,000</option>
-<option>₹50,000 – ₹1 Lakh</option>
-<option>₹1 Lakh – ₹5 Lakh</option>
-<option>₹5 Lakh – ₹10 Lakh</option>
-<option>Above ₹10 Lakh</option>
-
-</select>
-
-</div>
-
-
-<div class="field">
-
-<label>Marketplace *</label>
-
-<select id="marketplace" required>
-
-<option value="">Select marketplace</option>
-<option>Myntra</option>
-<option>Flipkart</option>
-<option>Shopsy</option>
-<option>Meesho</option>
-<option>Multiple Marketplaces</option>
-
-</select>
-
-</div>
-
-
-<div class="field">
-
-<label>Approx. Number of SKUs</label>
-
-<select id="sku">
-
-<option value="">Select</option>
-<option>1 – 50</option>
-<option>51 – 200</option>
-<option>201 – 500</option>
-<option>501 – 1000</option>
-<option>1000+</option>
+<option>
+Multiple marketplaces
+</option>
 
 </select>
 
@@ -1491,11 +1291,259 @@ required>
 
 <div class="field full">
 
-<label>Service Required *</label>
+<label for="service">
+Service required *
+</label>
 
-<select id="service" required>
+<select
+id="service"
+name="service"
+required>
 
-<option value="">Select service</option>
+<option value="">
+Select service
+</option>
 
-<option>Account Management</option>
-<option>Account Relaunch</option
+<option>
+Account Management
+</option>
+
+<option>
+Account Relaunch
+</option>
+
+<option>
+Flipkart Brand Approval
+</option>
+
+<option>
+Brand Authorization
+</option>
+
+<option>
+Seller Onboarding
+</option>
+
+<option>
+Catalog Management
+</option>
+
+<option>
+Listing Optimization
+</option>
+
+<option>
+Growth Planning
+</option>
+
+<option>
+Performance Insights
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field full">
+
+<label for="message">
+Tell us about your requirement
+</label>
+
+<textarea
+id="message"
+name="message"
+placeholder="What are you currently facing or what would you like help with?">
+</textarea>
+
+</div>
+
+</div>
+
+
+<div class="formactions">
+
+<button
+class="pill"
+type="submit">
+
+Send enquiry on WhatsApp ↗
+
+</button>
+
+<span class="formnote">
+Your enquiry will open in WhatsApp before sending.
+</span>
+
+</div>
+
+
+<div
+class="success"
+id="success">
+
+Opening WhatsApp with your enquiry…
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="section" id="contact">
+
+<div class="wrap">
+
+<div class="cta">
+
+<span class="eyebrow">
+Let's get started
+</span>
+
+<h2>
+Ready to make marketplace management easier?
+</h2>
+
+<p>
+Tell us what you're selling.
+We'll discuss how we can help.
+</p>
+
+<a
+class="pill"
+href="https://wa.me/916203836621?text=Hi%20Sellers%20Hub%2C%20I'd%20like%20to%20discuss%20my%20business"
+target="_blank">
+
+Chat on WhatsApp ↗
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="wrap footer">
+
+<strong>
+sellers hub.
+</strong>
+
+<span>
+Marketplace management, made simpler.
+</span>
+
+<span>
+© <span id="year"></span> Sellers Hub
+</span>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+
+document.getElementById("enquiryForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+
+const form = e.currentTarget;
+
+const name =
+form.name.value.trim();
+
+const phone =
+form.phone.value.replace(/\D/g,"");
+
+const business =
+form.business.value.trim();
+
+const marketplace =
+form.marketplace.value;
+
+const service =
+form.service.value;
+
+const message =
+form.message.value.trim();
+
+
+/* PHONE VALIDATION */
+
+if(phone.length !== 10){
+
+alert("Please enter a valid 10-digit WhatsApp number.");
+
+return;
+
+}
+
+
+/* WHATSAPP MESSAGE */
+
+const whatsappMessage =
+`Hi Sellers Hub,
+
+I want to enquire about your marketplace services.
+
+Name: ${name}
+
+WhatsApp: ${phone}
+
+Business / Brand: ${business}
+
+Marketplace: ${marketplace}
+
+Service Required: ${service}
+
+Requirement:
+${message || "Not specified"}
+
+Thank you.`;
+
+
+/* SUCCESS MESSAGE */
+
+document.getElementById("success").style.display = "block";
+
+
+/* OPEN WHATSAPP */
+
+const whatsappURL =
+"https://wa.me/916203836621?text=" +
+encodeURIComponent(whatsappMessage);
+
+
+window.open(
+whatsappURL,
+"_blank"
+);
+
+});
+
+</script>
+
+</body>
+</html>
